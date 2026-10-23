@@ -1,0 +1,316 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens - Bespoke Dual Theme
+ * Light mode: pristine pearl white aesthetics with deep emerald accents.
+ * Dark mode: rich warm obsidian (#0f0c08) with luminous gold accents (#f59e0b).
+ */
+
+:root {
+  /* Backgrounds - Pure Pearl White */
+  --color-bg: #fafbfe;
+  --color-bg-alt: #f1f4f8;
+  --color-surface: #ffffff;
+
+  /* Foregrounds */
+  --color-fg: #09090b;
+  --color-fg-muted: #475569;
+  --color-fg-subtle: #94a3b8;
+
+  /* Deep Emerald Accents (Light Mode) */
+  --color-accent: #059669;
+  --color-accent-hover: #047857;
+  --color-neon-cyan: #059669;
+  --color-neon-purple: #8b5cf6;
+  --color-neon-green: #10b981;
+
+  /* Borders */
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  /* Status */
+  --color-success: #059669;
+  --color-warning: #ea580c;
+  --color-danger: #dc2626;
+}
+
+/* Dark theme - Warm Obsidian Brown & Gold */
+html[data-theme="dark"] {
+  --color-bg: #0f0c08;
+  --color-bg-alt: #16120c;
+  --color-surface: rgba(22, 18, 12, 0.90);
+
+  --color-fg: #f1f5f9;
+  --color-fg-muted: #a8a29e;
+  --color-fg-subtle: #78716c;
+
+  --color-accent: #f59e0b;
+  --color-accent-hover: #fbbf24;
+  --color-neon-cyan: #f59e0b;
+  --color-neon-purple: #a855f7;
+  --color-neon-green: #34d399;
+
+  --color-border: rgba(245, 158, 11, 0.12);
+  --color-border-strong: rgba(245, 158, 11, 0.28);
+
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-danger: #f43f5e;
+}
+
+/* System preference fallback */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --color-bg: #0f0c08;
+    --color-bg-alt: #16120c;
+    --color-surface: rgba(22, 18, 12, 0.90);
+
+    --color-fg: #f1f5f9;
+    --color-fg-muted: #a8a29e;
+    --color-fg-subtle: #78716c;
+
+    --color-accent: #f59e0b;
+    --color-accent-hover: #fbbf24;
+    --color-neon-cyan: #f59e0b;
+    --color-neon-purple: #a855f7;
+    --color-neon-green: #34d399;
+
+    --color-border: rgba(245, 158, 11, 0.12);
+    --color-border-strong: rgba(245, 158, 11, 0.28);
+
+    --color-success: #34d399;
+    --color-warning: #fbbf24;
+    --color-danger: #f43f5e;
+  }
+}
+
+/* === Base === */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-almarai), var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background-image: 
+    linear-gradient(to right, rgba(5, 150, 105, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(5, 150, 105, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-attachment: fixed;
+}
+
+html[data-theme="dark"] body {
+  background-image: 
+    linear-gradient(to right, rgba(245, 158, 11, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 158, 11, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.09) 0%, transparent 55%),
+    radial-gradient(circle at 85% 25%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+}
+
+/* === Glassmorphic Card Utilities === */
+.cyber-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.cyber-card:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="dark"] .cyber-card:hover {
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.8), 0 0 25px -4px rgba(245, 158, 11, 0.16);
+}
+
+/* === Project Card Spotlight Hover Effect === */
+.projects-grid {
+  perspective: 1200px;
+}
+
+.projects-grid .project-card-wrapper {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.projects-grid:hover .project-card-wrapper {
+  opacity: 0.45;
+  filter: blur(1.5px) saturate(0.5);
+  transform: scale(0.96);
+}
+
+.projects-grid:hover .project-card-wrapper:hover {
+  opacity: 1;
+  filter: blur(0px) saturate(1.1);
+  transform: scale(1.04);
+  z-index: 10;
+}
+
+.projects-grid .project-card-wrapper:hover .project-card {
+  border-color: rgba(5, 150, 105, 0.35);
+  box-shadow:
+    0 0 40px -8px rgba(5, 150, 105, 0.18),
+    0 20px 50px -15px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(5, 150, 105, 0.1);
+}
+
+html[data-theme="dark"] .projects-grid .project-card-wrapper:hover .project-card {
+  border-color: rgba(245, 158, 11, 0.40);
+  box-shadow:
+    0 0 40px -8px rgba(245, 158, 11, 0.22),
+    0 20px 50px -15px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(245, 158, 11, 0.15);
+}
+
+/* Shimmer sweep on hover (Gold in dark mode, Emerald in light mode) */
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(5, 150, 105, 0.08) 45%,
+    rgba(5, 150, 105, 0.20) 50%,
+    rgba(5, 150, 105, 0.08) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+html[data-theme="dark"] .project-card::before {
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(245, 158, 11, 0.08) 45%,
+    rgba(245, 158, 11, 0.20) 50%,
+    rgba(245, 158, 11, 0.08) 55%,
+    transparent 60%
+  );
+}
+
+.project-card-wrapper:hover .project-card::before {
+  transform: translateX(100%);
+}
+
+.neon-border-cyan {
+  border: 1px solid rgba(5, 150, 105, 0.35);
+  box-shadow: 0 0 15px -3px rgba(5, 150, 105, 0.22);
+}
+
+html[data-theme="dark"] .neon-border-cyan {
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 15px -3px rgba(245, 158, 11, 0.22);
+}
+
+.neon-text-cyan {
+  color: #059669;
+  text-shadow: 0 0 12px rgba(5, 150, 105, 0.35);
+}
+
+html[data-theme="dark"] .neon-text-cyan {
+  color: #f59e0b;
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+}
+
+.neon-text-purple {
+  color: #c084fc;
+  text-shadow: 0 0 12px rgba(192, 132, 252, 0.4);
+}
+
+.font-mono-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* === Clean Animation Utilities === */
+@keyframes projectSlideNext {
+  from {
+    opacity: 0;
+    transform: translateX(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes projectSlidePrev {
+  from {
+    opacity: 0;
+    transform: translateX(-16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.animate-project-next {
+  animation: projectSlideNext 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-project-prev {
+  animation: projectSlidePrev 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Organic Ambient Mesh Float */
+@keyframes ambientFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(14px, -18px) scale(1.06);
+  }
+}
+
+.animate-ambient-float {
+  animation: ambientFloat 14s ease-in-out infinite;
+}
+
+.animate-ambient-float-reverse {
+  animation: ambientFloat 18s ease-in-out infinite reverse;
+}
+
+/* Hero Stagger Entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

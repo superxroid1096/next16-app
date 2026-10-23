@@ -1,0 +1,88 @@
+{
+  "common": {
+    "skip": "تخطي",
+    "close": "إغلاق",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "loading": "جاري التحميل",
+    "error": "حدث خطأ",
+    "success": "تم بنجاح",
+    "viewAll": "عرض الكل",
+    "goBack": "رجوع"
+  },
+  "nav": {
+    "about": "التعريف",
+    "projects": "المشاريع",
+    "skills": "المهارات",
+    "experience": "الخبرات",
+    "certificates": "الشهادات",
+    "feedbacks": "آراء الناس",
+    "contact": "التواصل"
+  },
+  "theme": {
+    "light": "وضع فاتح",
+    "dark": "وضع داكن",
+    "toggle": "تبديل الثيم"
+  },
+  "language": {
+    "ar": "العربية",
+    "en": "English",
+    "toggle": "تبديل اللغة"
+  },
+  "visitMode": {
+    "question": "الزيارة دي لإيه؟",
+    "hire": "توظيف",
+    "client": "مشروع",
+    "tech": "اطلاع تقني",
+    "skip": "تخطي",
+    "change": "تغيير الوضع"
+  },
+  "hero": {
+    "availableForWork": "متاح للعمل"
+  },
+  "projects": {
+    "title": "المشاريع",
+    "viewProject": "عرض المشروع",
+    "techs": "التقنيات",
+    "liveDemo": "معاينة حية",
+    "sourceCode": "الكود",
+    "challenge": "التحدي",
+    "solution": "الحل",
+    "result": "النتيجة",
+    "myRole": "دوري",
+    "next": "التالي",
+    "previous": "السابق"
+  },
+  "skills": {
+    "title": "المهارات"
+  },
+  "experience": {
+    "title": "الخبرات",
+    "present": "حتى الآن"
+  },
+  "certificates": {
+    "title": "الشهادات والكورسات",
+    "verify": "تحقق"
+  },
+  "feedbacks": {
+    "title": "آراء الناس",
+    "formTitle": "شاركنا رأيك",
+    "name": "الاسم",
+    "roleOrCompany": "الصفة أو الجهة (اختياري)",
+    "message": "رأيك",
+    "submit": "إرسال",
+    "thankYou": "شكرا لك! رأيك هيتراجع وبعدين يظهر."
+  },
+  "contact": {
+    "title": "التواصل",
+    "whatsapp": "تواصل عبر واتساب"
+  },
+  "notFound": {
+    "title": "الصفحة مش موجودة",
+    "message": "الصفحة اللي بتدور عليها مش موجودة.",
+    "goHome": "الرئيسية"
+  }
+}

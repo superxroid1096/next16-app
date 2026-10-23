@@ -1,0 +1,88 @@
+{
+  "common": {
+    "skip": "Skip",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "loading": "Loading",
+    "error": "An error occurred",
+    "success": "Done",
+    "viewAll": "View all",
+    "goBack": "Go back"
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "certificates": "Certificates",
+    "feedbacks": "Testimonials",
+    "contact": "Contact"
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "toggle": "Toggle theme"
+  },
+  "language": {
+    "ar": "العربية",
+    "en": "English",
+    "toggle": "Switch language"
+  },
+  "visitMode": {
+    "question": "What brings you here?",
+    "hire": "Hiring",
+    "client": "Project",
+    "tech": "Tech overview",
+    "skip": "Skip",
+    "change": "Change mode"
+  },
+  "hero": {
+    "availableForWork": "Available for work"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View project",
+    "techs": "Technologies",
+    "liveDemo": "Live demo",
+    "sourceCode": "Source code",
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "result": "Result",
+    "myRole": "My role",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present"
+  },
+  "certificates": {
+    "title": "Certificates & Courses",
+    "verify": "Verify"
+  },
+  "feedbacks": {
+    "title": "Testimonials",
+    "formTitle": "Share your feedback",
+    "name": "Name",
+    "roleOrCompany": "Role or company (optional)",
+    "message": "Your feedback",
+    "submit": "Submit",
+    "thankYou": "Thank you! Your feedback will be reviewed before publishing."
+  },
+  "contact": {
+    "title": "Contact",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "message": "The page you are looking for does not exist.",
+    "goHome": "Home"
+  }
+}
